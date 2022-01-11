@@ -36,13 +36,14 @@ with the following contents:
 [build]
 rustdocflags = [ "--html-in-header", "./src/html/docs-header.html" ]
 ```
-3. Add these two line to your `Cargo.toml`
+3. Add these two lines to your `Cargo.toml`
 ```toml
 [package.metadata.docs.rs]
 rustdoc-args = [ "--html-in-header", "./src/html/docs-header.html" ]
 ```
-4. Create `./src/html` directory (where `./src/html` is a relative path from the crate root)
-5. In `./src/html` add `docs-header.html` with the following contents:
+4. Add `include_display_mode_tex` as `[dependency]`, not `[dev-dependency]`
+5. Create `./src/html` directory (where `./src/html` is a relative path from the crate root)
+6. In `./src/html` add `docs-header.html` with the following contents:
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css" integrity="sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" integrity="sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx" crossorigin="anonymous"></script>
@@ -60,7 +61,7 @@ rustdoc-args = [ "--html-in-header", "./src/html/docs-header.html" ]
     });
 </script>
 ```
-# Example
+# Code example
 ```no_run
 use include_display_mode_tex::include_display_mode_tex;
 
@@ -68,11 +69,19 @@ use include_display_mode_tex::include_display_mode_tex;
 # let s = 0;
 ```
 
-Notice that the path is relative not to the crate root but to the call site and that
+Notice that the path is relative not to the crate root but to the call site (just like
+for [`core::include_str`](https://doc.rust-lang.org/core/macro.include_str.html)) and that
 the documentation must be built with 
 ```text
 cargo doc --no-deps
 ```
+
+# Example on docs.rs
+
+[`zero_based_index` crate](https://docs.rs/zero_based_index/latest/zero_based_index/struct.ZeroBasedIndex.html)
+
+* [GitHub](https://github.com/JohnScience/zero_based_index)
+* [crates.io](https://crates.io/crates/zero_based_index)
 
 # Sources of inspiration
 Other include\* macros:
