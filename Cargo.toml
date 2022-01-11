@@ -31,6 +31,3 @@ relative-path = "1.6.0"
 
 [lib]
 proc-macro = true
-
-[package.metadata.docs.rs]
-rustdoc-args = [ "--html-in-header", "./src/html/docs-header.html" ]
