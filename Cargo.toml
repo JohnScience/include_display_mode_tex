@@ -1,0 +1,18 @@
+[package]
+name = "include_display_mode_tex"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+proc-macro2 = "1.0.36"
+syn = {version = "1.0.84", features = ["parsing"] }
+quote = "1.0.14"
+relative-path = "1.6.0"
+
+[lib]
+proc-macro = true
+
+[package.metadata.docs.rs]
+rustdoc-args = [ "--html-in-header", "./src/html/docs-header.html" ]
