@@ -3,35 +3,39 @@
 The crate is meant to provide only one item, its namesake, `include_display_mode_tex!`() macro.
 This macro must embed [display mode](http://www.malinc.se/math/latex/inlinedisplayen.php) tex.
 
-# How it works
-
-## High-level explanation
+# Implementation overview
 
 First and foremost, the only macro of this crate, `include_display_mode_tex!`() , is
 implemented as a [function-like procedural macro](https://doc.rust-lang.org/reference/procedural-macros.html#function-like-procedural-macros), i.e. it accepts and outputs [`TokenStream`] and is driven by
 the machinery provided by the [`proc_macro` crate](https://doc.rust-lang.org/reference/procedural-macros.html#the-proc_macro-crate)
 
+## Project structure
+
+```text
+├── src
+│   ├── args.rs # anything that has to do with obtaining arguments from the input TokenStream
+│   └── lib.rs # the macro itself and the remaining constituent parts
+├── Cargo.toml # project manifest
+├── README.md # document for library users
+├── DESIGN.md # document for library developers
+├── LICENSE-APACHE
+│       ├── # legal texts
+├── LICENSE-MIT
+└── .gitignore
+```
+
+# How it works
+
 ## The procedure
 
-1. The macro processes the input [`TokenStream`]:
-   1. First, the macro turns [`TokenStream`] into iterator over [`TokenTree`]s
-```rust
-// include_display_mode_tex/src/args.rs
-
-use proc_macro::{token_stream::IntoIter as TokenTreeIter /*...*/}
-
-// ...
-impl ArgsTokenStrean {
-    // ...
-
-    fn extract_arg_token_trees(self) -> core::result::Result<ArgTokenTrees, Error> {
-        let mut arg_tt_iter: TokenTreeIter = self.0.into_iter();
-        // ...
-    }
-}
-```
-   1. Then, it assigns the first [`TokenTree`]\(s\) from the iterator
-1. 
+1. The input [`TokenStream`] undergoes the following series of transformations:
+   ```mermaid
+    flowchart LR;
+        TokenStream-->|ArgsTokenStream::new|ArgsTokenStream;
+        ArgsTokenStream-->|ArgsTokenStream::extract_arg_token_trees|ArgTokenTrees;
+        ArgTokenTrees-->D;
+   ```
+2. 
 
 # Plans for the development
 
