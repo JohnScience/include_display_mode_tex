@@ -14,7 +14,7 @@ impl ArgsTokenStream {
         ArgsTokenStream(ts)
     }
 
-    fn extract_arg_token_trees(self) -> core::result::Result<ArgTokenTrees, Error> {
+    fn try_extract_arg_token_trees(self) -> core::result::Result<ArgTokenTrees, Error> {
         let mut arg_tt_iter: TokenTreeIter = self.0.into_iter();
 
         let presumed_string_literal_with_path_to_tex: TokenTree = arg_tt_iter
@@ -78,7 +78,7 @@ impl TryGetArgs for ArgTokenTrees {
 impl TryGetArgs for TokenStream {
     fn try_get_args(self) -> Result<Args, Error> {
         ArgsTokenStream::new(self)
-            .extract_arg_token_trees()?
+            .try_extract_arg_token_trees()?
             .try_get_args()
     }
 }

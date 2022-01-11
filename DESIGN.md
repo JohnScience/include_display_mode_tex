@@ -22,20 +22,7 @@ the machinery provided by the [`proc_macro` crate](https://doc.rust-lang.org/ref
 │       ├── # legal texts
 ├── LICENSE-MIT
 └── .gitignore
-```
-
-# How it works
-
-## The procedure
-
-1. The input [`TokenStream`] undergoes the following series of transformations:
-   ```mermaid
-    flowchart LR;
-        TokenStream-->|ArgsTokenStream::new|ArgsTokenStream;
-        ArgsTokenStream-->|ArgsTokenStream::extract_arg_token_trees|ArgTokenTrees;
-        ArgTokenTrees-->D;
-   ```
-2. 
+``` 
 
 # Plans for the development
 
