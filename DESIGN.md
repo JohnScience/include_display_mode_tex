@@ -28,7 +28,7 @@ In order to make the developer experience more pleasant, the alternative syntax 
 #[doc = include_display_mod_tex!("CARGO_MANIFEST_DIR/path/from/crate_root/tex_file.tex")]
 ```
 
-for the path from the root of the crate the the macro was called and
+for the path from the root of the crate where the macro was called and
 
 ```rust
 #[doc = include_display_mod_tex!("TEX_DIR/path/to/tex_file.tex")]
