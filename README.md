@@ -63,9 +63,9 @@ cargo doc --no-deps
 
 # Sources of inspiration
 Other include\* macros:
-* [`core::include_str`]
-* [`core::include_bytes`]
-* [`core::include`]
+* [`core::include_str`](https://doc.rust-lang.org/core/macro.include_str.html)
+* [`core::include_bytes`](https://doc.rust-lang.org/core/macro.include_bytes.html)
+* [`core::include`](https://doc.rust-lang.org/core/macro.include.html)
 * [`include_dir::include_dir`](https://crates.io/crates/include_dir)
 
 Special thanks to [`victe`](https://github.com/victe) for providing 
