@@ -1,7 +1,25 @@
 [package]
 name = "include_display_mode_tex"
 version = "0.1.0"
+authors = ["Dmitrii Demenev <demenev.dmitriy1@gmail.com>"]
 edition = "2021"
+rust-version = "1.59.0" # https://github.com/foresterre/cargo-msrv/issues/244
+description = "A library for embedding TeX formulae in documentation."
+documentation = "https://docs.rs/include_display_mode_tex"
+readme = "README.md"
+repository = "https://github.com/JohnScience/include_display_mode_tex"
+license = "MIT OR Apache-2.0"
+# license-file | not needed
+keywords = ["tex", "latex", "docs", "documentation"]
+categories = ["development-tools"] # lack of category slug
+# workspace | not needed
+# build | not needed
+# links | not needed
+# exclude | not needed
+autobins = false
+autoexamples = false
+autotests = false
+autobenches = false
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
