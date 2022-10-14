@@ -131,7 +131,7 @@ doc = ["include_display_mode_tex"]
 use include_display_mode_tex::include_display_mode_tex;
 
 #[cfg_attr(all(doc, feature = "doc"), doc = include_display_mode_tex!("./tex/example.tex"))]
-# let s = 0;
+let s = 0;
 ```
 
 Notice that the path is relative not to the crate root but to the call site (just like
