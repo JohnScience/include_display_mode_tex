@@ -123,7 +123,7 @@ doc = ["include_display_mode_tex"]
     });
 </script>
 ```
-> KaTeX can occasionally get updated. Also, you can other libraries instead.
+> KaTeX can occasionally get updated. Also, you can use other libraries for rendering LaTeX instead.
 
 # Code example
 ```no_run
