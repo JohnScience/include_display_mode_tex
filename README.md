@@ -1,3 +1,7 @@
+[![crates.io](https://img.shields.io/crates/v/include_display_mode_tex.svg)][`include_display_mode_tex`]
+[![crates.io](https://img.shields.io/crates/d/include_display_mode_tex.svg)][`include_display_mode_tex`]
+[![crates.io](https://img.shields.io/github/workflow/status/JohnScience/include_display_mode_tex/Rust)][`include_display_mode_tex`]
+
 # What is offered by this crate
 
 The crate provides [`include_display_mode_tex!`](https://docs.rs/include_display_mode_tex/latest/include_display_mode_tex/macro.include_display_mode_tex.html) macro that allows to embed tex formulae
