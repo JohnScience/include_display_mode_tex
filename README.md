@@ -135,6 +135,8 @@ Other include\* macros:
 Special thanks to [`victe`](https://github.com/victe) for providing 
 [`rust-latex-doc-minimal-example`](https://github.com/victe/rust-latex-doc-minimal-example)
 
+[`include_display_mode_tex`]: https://crates.io/crates/include_display_mode_tex
+
 # License
 
 <sup>
